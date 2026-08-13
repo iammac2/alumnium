@@ -220,10 +220,10 @@ export const Env = {
     return envVar("ALUMNIUM_EVAL_TRIAL_COUNT", z.coerce.number().default(25));
   },
 
-  get ALUMNIUM_EVAL_RUN_TIMEOUT_MS() {
+  get ALUMNIUM_EVAL_RUN_TIMEOUT_MIN() {
     return envVar(
-      "ALUMNIUM_EVAL_RUN_TIMEOUT_MS",
-      z.coerce.number().default(60000 * 20), // 20 minutes
+      "ALUMNIUM_EVAL_RUN_TIMEOUT_MIN",
+      z.coerce.number().default(20),
     );
   },
 
@@ -256,9 +256,9 @@ export const Env = {
     );
   },
 
-  get ALUMNIUM_EVAL_THRESHOLD() {
+  get ALUMNIUM_EVAL_THRESHOLD_PCT() {
     return envVar(
-      "ALUMNIUM_EVAL_THRESHOLD",
+      "ALUMNIUM_EVAL_THRESHOLD_PCT",
       z.coerce.number().min(0).max(100).default(95),
     );
   },
